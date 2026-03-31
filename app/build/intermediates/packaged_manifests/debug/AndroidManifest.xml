@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.brainzone.mindgames"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="24"
+        android:targetSdkVersion="34" />
+
+    <permission
+        android:name="com.brainzone.mindgames.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.brainzone.mindgames.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+
+    <application
+        android:allowBackup="true"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        android:debuggable="true"
+        android:extractNativeLibs="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:testOnly="true"
+        android:theme="@style/Theme.BrainZone" >
+        <activity
+            android:name="com.brainzone.mindgames.SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.BrainZone.Splash" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.brainzone.mindgames.MainActivity" />
+        <activity android:name="com.brainzone.mindgames.Game1Activity" />
+        <activity android:name="com.brainzone.mindgames.Game2Activity" />
+        <activity android:name="com.brainzone.mindgames.Game3Activity" />
+        <activity android:name="com.brainzone.mindgames.GameResultActivity" />
+        <activity android:name="com.brainzone.mindgames.LeaderboardActivity" />
+        <activity android:name="com.brainzone.mindgames.SettingsActivity" />
+
+        <service
+            android:name="com.brainzone.mindgames.BackgroundMusicService"
+            android:enabled="true"
+            android:exported="false" />
+
+        <receiver
+            android:name="com.brainzone.mindgames.BatteryLowReceiver"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.BATTERY_LOW" />
+            </intent-filter>
+        </receiver>
+
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="com.brainzone.mindgames.androidx-startup"
+            android:exported="false" >
+            <meta-data
+                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+                android:value="androidx.startup" />
+            <meta-data
+                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+                android:value="androidx.startup" />
+        </provider>
+    </application>
+
+</manifest>

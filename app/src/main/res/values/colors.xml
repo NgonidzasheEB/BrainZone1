@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Core Brand -->
+    <color name="purple_200">#BB86FC</color>
+    <color name="purple_500">#6200EE</color>
+    <color name="purple_700">#3700B3</color>
+    <color name="teal_200">#03DAC5</color>
+    <color name="teal_700">#018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- UI Backgrounds -->
+    <color name="background_color">#F5F7FA</color>
+    <color name="primary_text">#121212</color>
+    <color name="secondary_text">#5F6368</color>
+
+    <!-- Bold Dashboard Tile Colors -->
+    <color name="math_tile_color">#2196F3</color>
+    <color name="memory_tile_color">#9C27B0</color>
+    <color name="word_tile_color">#4CAF50</color>
+
+    <!-- Generic Aliases for compatibility -->
+    <color name="accent_color">#FF4081</color>
+    <color name="correct_color">#4CAF50</color>
+    <color name="wrong_color">#F44336</color>
+    <color name="colorBackground">#F5F7FA</color>
+    <color name="colorStatusBar">#3700B3</color>
+    <color name="colorSplashBg">#6200EE</color>
+    <color name="colorTextPrimary">#121212</color>
+    <color name="colorTextSecondary">#5F6368</color>
+
+    <!-- Missing colors found during build -->
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorTextHint">#808080</color>
+    <color name="colorDivider">#BDBDBD</color>
+    <color name="colorCardBack">#D1D5DB</color>
+    <color name="colorCardFront">#FFFFFF</color>
+    <color name="colorCorrect">#4CAF50</color>
+</resources>

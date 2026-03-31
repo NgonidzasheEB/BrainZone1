@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/background_color"
+    android:gravity="center_horizontal">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="32dp">
+
+        <ImageButton
+            android:id="@+id/btnBack"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_back"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="Back" />
+
+        <TextView
+            android:id="@+id/tvTimer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/timer_label"
+            android:textSize="20sp"
+            android:textColor="@color/accent_color"
+            android:layout_centerInParent="true"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tvQuestionCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1/10"
+            android:textSize="18sp"
+            android:textColor="@color/secondary_text"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"/>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tvScore"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/score_label"
+        android:textSize="18sp"
+        android:textColor="@color/primary_text"
+        android:layout_marginBottom="24dp"/>
+
+    <TextView
+        android:id="@+id/tvEquation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Loading..."
+        android:textSize="48sp"
+        android:textColor="@color/primary_text"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="32dp"
+        android:textStyle="bold"/>
+
+    <EditText
+        android:id="@+id/etAnswer"
+        android:layout_width="140dp"
+        android:layout_height="wrap_content"
+        android:hint="?"
+        android:inputType="number"
+        android:textSize="36sp"
+        android:gravity="center"
+        android:layout_marginBottom="32dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnSubmit"
+        android:layout_width="200dp"
+        android:layout_height="60dp"
+        android:text="Submit"
+        android:textSize="18sp"
+        app:cornerRadius="12dp" />
+
+    <TextView
+        android:id="@+id/tvFeedback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:layout_marginTop="24dp"
+        android:visibility="invisible"
+        android:textStyle="bold"/>
+
+</LinearLayout>
