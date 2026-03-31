@@ -1,7 +1,5 @@
 package com.brainzone.mindgames.adapters;
 
-import android.animation.AnimatorInflater;
-import android.animation.AnimatorSet;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,6 +8,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.brainzone.mindgames.R;
@@ -51,28 +50,28 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder
         if (card.isFaceDown()) {
             holder.cardFront.setVisibility(View.GONE);
             holder.cardBack.setVisibility(View.VISIBLE);
-            holder.cardView.setCardBackgroundColor(context.getColor(R.color.colorCardBack));
+            holder.cardView.setCardBackgroundColor(ContextCompat.getColor(context, R.color.colorCardBack));
             holder.cardView.setAlpha(1f);
 
         } else if (card.isFaceUp()) {
             holder.cardBack.setVisibility(View.GONE);
             holder.cardFront.setVisibility(View.VISIBLE);
             holder.cardFront.setText(card.getSymbol());
-            holder.cardView.setCardBackgroundColor(context.getColor(R.color.colorCardFront));
+            holder.cardView.setCardBackgroundColor(ContextCompat.getColor(context, R.color.colorCardFront));
             holder.cardView.setAlpha(1f);
 
         } else { // MATCHED
             holder.cardBack.setVisibility(View.GONE);
             holder.cardFront.setVisibility(View.VISIBLE);
             holder.cardFront.setText(card.getSymbol());
-            holder.cardView.setCardBackgroundColor(context.getColor(R.color.colorCorrect));
+            holder.cardView.setCardBackgroundColor(ContextCompat.getColor(context, R.color.colorCorrect));
             holder.cardView.setAlpha(0.7f);
         }
 
         // ── Click ─────────────────────────────────────────────────────────────
         holder.cardView.setOnClickListener(v -> {
             if (card.isFaceDown()) {
-                listener.onCardClick(holder.getAdapterPosition());
+                listener.onCardClick(holder.getBindingAdapterPosition());
             }
         });
     }
@@ -99,7 +98,7 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.CardViewHolder
             .start();
     }
 
-    static class CardViewHolder extends RecyclerView.ViewHolder {
+    public static class CardViewHolder extends RecyclerView.ViewHolder {
         CardView cardView;
         TextView cardFront;
         TextView cardBack;
