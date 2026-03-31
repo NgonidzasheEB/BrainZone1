@@ -1,0 +1,23 @@
+# Android Studio / IntelliJ
+.idea/
+.gradle/
+build/
+capture/
+memory_heap_dumps/
+*.iml
+*.iws
+*.ipr
+
+# Local configuration
+local.properties
+
+# Output
+/build
+app/build/
+
+# Logs
+*.log
+
+# System files
+.DS_Store
+Thumbs.db
