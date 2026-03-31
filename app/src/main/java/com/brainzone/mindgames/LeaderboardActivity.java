@@ -3,6 +3,7 @@ package com.brainzone.mindgames;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
+import android.widget.ImageButton;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -14,6 +15,7 @@ public class LeaderboardActivity extends AppCompatActivity {
 
     private RecyclerView rvLeaderboard;
     private Button btnClearScores;
+    private ImageButton btnBack;
     private LeaderboardAdapter adapter;
     private List<LeaderboardItem> leaderboardItems;
     private SharedPreferences prefs;
@@ -26,6 +28,9 @@ public class LeaderboardActivity extends AppCompatActivity {
         prefs = getSharedPreferences("BrainZonePrefs", MODE_PRIVATE);
         rvLeaderboard = findViewById(R.id.rvLeaderboard);
         btnClearScores = findViewById(R.id.btnClearScores);
+        btnBack = findViewById(R.id.btnBack);
+
+        btnBack.setOnClickListener(v -> finish());
 
         loadLeaderboard();
 

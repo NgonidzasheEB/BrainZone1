@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
@@ -18,6 +19,7 @@ public class SettingsActivity extends AppCompatActivity {
     private SwitchMaterial switchMusic, switchSFX;
     private RadioGroup rgDifficulty;
     private Button btnReset, btnSave;
+    private ImageButton btnBack;
     private SharedPreferences prefs;
 
     @Override
@@ -33,9 +35,11 @@ public class SettingsActivity extends AppCompatActivity {
         rgDifficulty = findViewById(R.id.rgDifficulty);
         btnReset = findViewById(R.id.btnReset);
         btnSave = findViewById(R.id.btnSave);
+        btnBack = findViewById(R.id.btnBack);
 
         loadSettings();
 
+        btnBack.setOnClickListener(v -> finish());
         btnSave.setOnClickListener(v -> saveSettings());
         btnReset.setOnClickListener(v -> showResetConfirmation());
     }

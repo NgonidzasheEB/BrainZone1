@@ -21,7 +21,12 @@ public class SplashActivity extends AppCompatActivity {
                 SharedPreferences prefs = getSharedPreferences("BrainZonePrefs", MODE_PRIVATE);
                 String playerName = prefs.getString("player_name", "");
 
-                Intent i = new Intent(SplashActivity.this, MainActivity.class);
+                Intent i;
+                if (playerName.isEmpty()) {
+                    i = new Intent(SplashActivity.this, LoginActivity.class);
+                } else {
+                    i = new Intent(SplashActivity.this, MainActivity.class);
+                }
                 startActivity(i);
                 finish();
             }
